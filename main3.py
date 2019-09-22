@@ -20,7 +20,7 @@ class MyGame(arcade.Window):
         self.animal_list = arcade.SpriteList()
 
 
-    def setup(self):
+    def setup(self):  
         self.animal_sprite = arcade.Sprite("assets/moose.png", 0.5)
         self.animal_sprite.center_x = 400
         self.animal_sprite.center_y = 300
@@ -37,7 +37,9 @@ class MyGame(arcade.Window):
 
 
     def on_mouse_motion(self, x, y, dx, dy):
-        pass
+        for a in self.animal_list:
+            self.animal_sprite.center_x = x
+            self.animal_sprite.center_y = y
 
 def main():
     """ Main method """
